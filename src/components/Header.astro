@@ -1,17 +1,17 @@
 ---
-import { SITE_TITLE } from '../consts';
+// ファイルの上部（--- の間）にこの1行があるか確認、なければ追加
 import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
 ---
 
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/my-portfolio/Home">Home</HeaderLink>
-
-			<HeaderLink href="/my-portfolio/blog">Blog</HeaderLink>
-			<HeaderLink href="/my-portfolio/about">About</HeaderLink>
-		</div>
+    <nav>
+        <h2><a href={import.meta.env.BASE_URL}>{SITE_TITLE}</a></h2>
+        <div class="internal-links">
+            <HeaderLink href={import.meta.env.BASE_URL}>Home</HeaderLink>
+            <HeaderLink href={`${import.meta.env.BASE_URL}/blog`}>Blog</HeaderLink>
+            <HeaderLink href={`${import.meta.env.BASE_URL}/about`}>About</HeaderLink>
+        </div>
 		<div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
 				<span class="sr-only">Follow Astro on Mastodon</span>
