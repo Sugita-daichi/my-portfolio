@@ -19,13 +19,30 @@ import profileImage from '../assets/Profile.jpg';
 				padding: 3em 1em;
 			}
 			.profile-header {
-				border-bottom: 2px solid var(--accent);
-				margin-bottom: 3rem;
+				border-bottom: 2px solid var(--accent); /* 横線 [cite: 35] */
+				margin-bottom: 2rem;
 				padding-bottom: 0.5rem;
 			}
 			h1 {
 				color: var(--heading-color);
 			}
+			
+			/* --- 追加：大きな画像用の設定 --- */
+			.large-profile-img-container {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				margin-bottom: 3rem; /* 自己紹介との間の余白 */
+			}
+			.large-profile-img {
+				width: 100%;          /* 横幅いっぱい [cite: 35] */
+				height: auto;         /* 縦横比を維持 [cite: 41] */
+				border-radius: 12px;  /* 角を少し丸くする */
+				border: 1px solid var(--box-border);
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+			}
+			/* ------------------------------ */
+
 			h2 {
 				color: var(--accent);
 				border-left: 4px solid var(--accent);
@@ -57,7 +74,7 @@ import profileImage from '../assets/Profile.jpg';
 			}
 			.contact-box h3 {
 				margin-top: 0;         
-				margin-bottom: 0.5rem; 
+				margin-bottom: 0.5rem;
 			}
 			.email-link {
 				color: var(--accent);
@@ -68,20 +85,6 @@ import profileImage from '../assets/Profile.jpg';
 			.email-link:hover {
 				text-decoration: underline;
 			}
-			.profile-img-container {
-				display: flex;
-				justify-content: center; /* 中央寄せ */
-				margin-bottom: 1.5rem;
-			}
-
-			.profile-img {
-				width: 150px;           /* 画像のサイズ */
-				height: 150px;
-				border-radius: 50%;     /* 正円にする */
-				object-fit: cover;      /* 縦横比を維持して切り抜き */
-				border: 3px solid var(--accent); /* 他のページと共通のシアンの枠線 */
-				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-			}
 		</style>
 	</head>
 	<body>
@@ -89,10 +92,11 @@ import profileImage from '../assets/Profile.jpg';
 		<main>
 			<div class="profile-header">
 				<h1>About Me</h1>
-				<div class="profile-img-container">
-					<Image src={profileImage} alt="杉田 大知" class="profile-img" />
-				</div>
 				<h4>静岡大学大学院 修士1年 / 杉田 大知 (Sugita Daichi)</h4>
+			</div>
+
+			<div class="large-profile-img-container">
+				<Image src={profileImage} alt="杉田 大知" class="large-profile-img" />
 			</div>
 
 			<section>
@@ -142,10 +146,10 @@ import profileImage from '../assets/Profile.jpg';
 			</section>
 
 			<section class="contact-box">
-    			<h3>Contact</h3>
-   				 <a href="mailto:daichi.sugita323@gmail.com" class="email-link">
-       				 daichi.sugita323@gmail.com
-   				 </a>
+				<h3>Contact</h3>
+				 <a href="mailto:daichi.sugita323@gmail.com" class="email-link">
+					 daichi.sugita323@gmail.com
+				 </a>
 			</section>
 		</main>
 		<Footer />
