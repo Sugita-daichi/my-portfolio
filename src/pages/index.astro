@@ -9,25 +9,117 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <html lang="ja">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 3em 1em;
+			}
+			.profile-header {
+				border-bottom: 1px solid #eee;
+				margin-bottom: 2rem;
+				padding-bottom: 1rem;
+			}
+			h2 {
+				color: #2c3e50;
+				border-left: 5px solid var(--accent);
+				padding-left: 15px;
+				margin-top: 2rem;
+				font-size: 1.5rem;
+			}
+			.section-content {
+				padding-left: 10px;
+				line-height: 1.8;
+			}
+			.lab-info {
+				background: #f8f9fa;
+				padding: 1rem;
+				border-radius: 8px;
+				border-left: 4px solid #ccc;
+			}
+			ul {
+				padding-left: 1.5rem;
+			}
+			li {
+				margin-bottom: 0.5rem;
+			}
+			strong {
+				color: var(--accent);
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>👨‍🔬 Profile</h1>
-			<p>
-				静岡大学大学院 総合科学技術研究科 修士1年の杉田大馳です。
-			</p>
-			<p>
-				主な研究分野は<strong>画像生成モデル（Stable Diffusion）におけるLoRAの検索と統合</strong>です。
-				生成AIの柔軟性を高め、ユーザーが望む画像をより正確に生成できる手法を開発しています。
-			</p>
-			
-			<h2>興味のある技術</h2>
-			<ul>
-				<li>Deep Learning / PyTorch</li>
-				<li>Computer Vision (Stable Diffusion, LoRA)</li>
-				<li>Image Retrieval / Vector Databases</li>
-			</ul>
+			<div class="profile-header">
+				<h1>About Me</h1>
+				<p><strong>静岡大学大学院 修士1年 / 画像生成AI・情報検索研究</strong></p>
+			</div>
+
+			<section>
+				<h2>自己紹介</h2>
+				<div class="section-content">
+					<p>
+						静岡大学大学院 総合科学技術研究科の杉田大知（Sugita Daichi）です。<br />
+						現在は、<strong>画像生成AIにおける追加学習モデル（LoRA）の効率的な検索および統合手法</strong>に関する研究に取り組んでいます。
+					</p>
+					<p>
+						膨大な数の特化型モデルの中から、ユーザーの意図に最適なものを自動で特定し、それらを組み合わせることで「誰でも望み通りの表現を手に取れる世界」の実現を目指しています。
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2>所属</h2>
+				<div class="section-content lab-info">
+					<p>
+						<strong>2025年4月 - 現在</strong><br />
+						静岡大学大学院 総合科学技術研究科 情報学専攻 荘司研究室（修士課程）
+					</p>
+					<p>
+						<strong>2021年4月 - 2025年3月</strong><br />
+						静岡大学 情報学部 行動情報学科 荘司研究室（学士課程）
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2>研究テーマ・関心領域</h2>
+				<div class="section-content">
+					<p>
+						大規模な生成モデルの活用を軸に、以下の領域を横断的に研究しています。
+					</p>
+					<ul>
+						<li><strong>情報検索:</strong> 大規模なLoRAモデル群からのベクトル検索</li>
+						<li><strong>画像処理:</strong> Stable Diffusion等の画像生成パイプラインの最適化</li>
+						<li><strong>機械学習:</strong> CLIP等のマルチモーダルモデルを用いた特徴抽出</li>
+						<li><strong>組み合わせ探索:</strong> 複数のLoRAを統合（Merge）する際の最適解の導出</li>
+					</ul>
+				</div>
+			</section>
+
+			<section>
+				<h2>技術スタック / 興味</h2>
+				<div class="section-content">
+					<ul>
+						<li><strong>Languages/Frameworks:</strong> Python, PyTorch, Transformers, Diffusers</li>
+						<li><strong>Tools:</strong> VS Code, Linux (Ubuntu), Git, Weights & Biases</li>
+						<li><strong>Hardware:</strong> NVIDIA GeForce RTX 4060 Ti (16GB VRAM) 環境での開発</li>
+					</ul>
+				</div>
+			</section>
+
+			<section>
+				<h2>趣味</h2>
+				<div class="section-content">
+					<ul>
+						<li><strong>ランニング:</strong> 研究の合間にリフレッシュとして走っています。</li>
+						<li><strong>ゲーム:</strong> ジャンルを問わずプレイしますが、最近はゲーム開発（Pygame）にも興味があります。</li>
+						<li><strong>スポーツ全般:</strong> 観るのも動くのも好きで、アクティブに過ごすことを心がけています。</li>
+					</ul>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>
