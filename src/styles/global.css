@@ -1,27 +1,21 @@
 /* テーマ変数定義 */
 :root {
 	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	
-	/* モード共通の背景・文字設定（ライトモードがデフォルト） */
 	--bg-color: #ffffff;
 	--text-color: #2c3e50;
 	--heading-color: #0f1219;
 	--code-bg: #e5e9f0;
+	--border-color: #e5e9f0;
 }
 
-/* ダークモード設定 (htmlタグにdarkクラスがついた時) */
+/* ダークモード設定 - html.dark で定義 */
 html.dark {
 	--bg-color: #121212;
 	--text-color: #e0e0e0;
 	--heading-color: #ffffff;
 	--accent: #64ffda;
 	--code-bg: #2d2d2d;
-	--gray-light: 45, 45, 45;
+	--border-color: #333333;
 }
 
 body {
@@ -29,27 +23,28 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	/* グラデーションを背景色変数に変更 */
-	background-color: var(--bg-color);
+	/* !importantを使い、初期設定のグラデーション等を強制的に上書きします */
+	background: var(--bg-color) !important;
+	color: var(--text-color) !important;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: var(--text-color);
 	font-size: 20px;
 	line-height: 1.7;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 
 main {
 	width: 720px;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
+	/* 背景色と文字色の影響がmainにも及ぶようにします */
+	background-color: transparent;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 0.5rem 0;
-	color: var(--heading-color);
+	color: var(--heading-color) !important;
 	line-height: 1.2;
 }
 
@@ -57,14 +52,14 @@ h1 { font-size: 3.052em; }
 h2 { font-size: 2.441em; }
 h3 { font-size: 1.953em; }
 
-strong, b { font-weight: 700; }
+strong, b { font-weight: 700; color: var(--heading-color); }
 
 a { color: var(--accent); transition: color 0.2s ease; }
-a:hover { color: var(--accent); opacity: 0.8; }
+a:hover { opacity: 0.8; }
 
 hr {
 	border: none;
-	border-top: 1px solid rgba(var(--gray-light), 0.3);
+	border-top: 1px solid var(--border-color);
 }
 
 code {
@@ -81,13 +76,11 @@ pre {
 	overflow-x: auto;
 }
 
-/* その他の要素も必要に応じて変数を適用 */
 blockquote {
 	border-left: 4px solid var(--accent);
 	padding: 0 0 0 20px;
 	margin: 0;
 	color: var(--text-color);
-	font-style: italic;
 }
 
 .sr-only {
