@@ -26,11 +26,54 @@ import { SITE_TITLE } from '../consts';
 </header>
 
 <style>
-	/* スタイルはそのまま */
-	header { margin: 0; padding: 0 1em; background: white; box-shadow: 0 2px 8px rgba(var(--black), 5%); }
-	h2 { margin: 0; font-size: 1em; }
-	nav { display: flex; align-items: center; justify-content: space-between; }
-	nav a { padding: 1em 0.5em; color: var(--black); border-bottom: 4px solid transparent; text-decoration: none; }
-	nav a.active { border-bottom-color: var(--accent); }
-	.social-links { display: flex; align-items: center; gap: 10px; }
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: #121212; /* ボディと同じ深い黒 */
+		border-bottom: 1px solid #333; /* 影の代わりに細い線で境界を作る */
+	}
+	h2 {
+		margin: 0;
+		font-size: 1.2em;
+	}
+	h2 a {
+		color: #fff; /* タイトルは純粋な白で強調 */
+		text-decoration: none;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	nav a {
+		padding: 1em 0.5em;
+		color: #aaa; /* 通常の文字は少し落としたグレー */
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+	/* ホバーした時とアクティブな時の色 */
+	nav a:hover,
+	nav a.active {
+		color: #64ffda; /* プロフィールで使用したアクセントカラー */
+		text-decoration: none;
+	}
+	nav a.active {
+		border-bottom-color: #64ffda;
+	}
+	.social-links {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+	/* アイコンの色も調整 */
+	.social-links a {
+		color: #ccc;
+		padding: 0; /* アイコン周りの余計なパディングを削除 */
+		border: none;
+	}
+	.social-links a:hover {
+		color: #fff;
+		border: none;
+	}
 </style>

@@ -10,6 +10,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
+			:root {
+				--bg-color: #121212; /* 深い黒 */
+				--text-color: #e0e0e0; /* 目に優しい白 */
+				--accent-light: #64ffda; /* アクセントカラー（エメラルド系） */
+			}
+			body {
+				background-color: var(--bg-color);
+				color: var(--text-color);
+			}
 			main {
 				width: calc(100% - 2em);
 				max-width: 800px;
@@ -17,35 +26,44 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				padding: 3em 1em;
 			}
 			.profile-header {
-				border-bottom: 1px solid #eee;
+				border-bottom: 1px solid #333;
 				margin-bottom: 2rem;
 				padding-bottom: 1rem;
 			}
+			h1 { color: #fff; }
 			h2 {
-				color: #2c3e50;
-				border-left: 5px solid var(--accent);
+				color: var(--accent-light);
+				border-left: 4px solid var(--accent-light);
 				padding-left: 15px;
-				margin-top: 2rem;
-				font-size: 1.5rem;
+				margin-top: 3rem;
+				font-size: 1.4rem;
 			}
-			.section-content {
-				padding-left: 10px;
+			h3 { color: #bbb; font-size: 1.1rem; margin-top: 1.5rem; }
+			p, li {
 				line-height: 1.8;
+				color: #ccc;
 			}
 			.lab-info {
-				background: #f8f9fa;
-				padding: 1rem;
+				background: #1e1e1e;
+				padding: 1.2rem;
 				border-radius: 8px;
-				border-left: 4px solid #ccc;
+				border-left: 4px solid #444;
 			}
-			ul {
-				padding-left: 1.5rem;
+			.contact-box {
+				margin-top: 3rem;
+				padding: 2rem;
+				border: 1px solid #333;
+				border-radius: 12px;
+				text-align: center;
 			}
-			li {
-				margin-bottom: 0.5rem;
+			.email-link {
+				color: var(--accent-light);
+				text-decoration: none;
+				font-weight: bold;
+				font-size: 1.1rem;
 			}
-			strong {
-				color: var(--accent);
+			.email-link:hover {
+				text-decoration: underline;
 			}
 		</style>
 	</head>
@@ -54,18 +72,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<main>
 			<div class="profile-header">
 				<h1>About Me</h1>
-				<p><strong>静岡大学大学院 修士1年 / 画像生成AI・情報検索研究</strong></p>
+				<p>静岡大学大学院 修士1年 / 杉田 大知 (Sugita Daichi)</p>
 			</div>
 
 			<section>
 				<h2>自己紹介</h2>
 				<div class="section-content">
 					<p>
-						静岡大学大学院 総合科学技術研究科の杉田大知（Sugita Daichi）です。<br />
-						現在は、<strong>画像生成AIにおける追加学習モデル（LoRA）の効率的な検索および統合手法</strong>に関する研究に取り組んでいます。
+						静岡大学大学院 総合科学技術研究科の杉田大知です。<br />
+						現在は、画像生成AIにおける追加学習モデル（LoRA）の検索および統合手法に関する研究を行っています。
 					</p>
 					<p>
-						膨大な数の特化型モデルの中から、ユーザーの意図に最適なものを自動で特定し、それらを組み合わせることで「誰でも望み通りの表現を手に取れる世界」の実現を目指しています。
+						また、<strong>株式会社LINEヤフーとの共同研究</strong>に従事しており、実社会の課題解決に向けた大規模モデルの活用・応用技術の開発に取り組んでいます。
 					</p>
 				</div>
 			</section>
@@ -74,12 +92,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				<h2>所属</h2>
 				<div class="section-content lab-info">
 					<p>
-						<strong>2025年4月 - 現在</strong><br />
-						静岡大学大学院 総合科学技術研究科 情報学専攻 荘司研究室（修士課程）
+						<strong>静岡大学大学院 総合科学技術研究科 情報学専攻 荘司研究室</strong><br />
+						（修士課程 1年）
 					</p>
-					<p>
-						<strong>2021年4月 - 2025年3月</strong><br />
-						静岡大学 情報学部 行動情報学科 荘司研究室（学士課程）
+					<p style="margin-top: 10px; font-size: 0.9rem; color: #888;">
+						静岡大学 情報学部 行動情報学科 卒業
 					</p>
 				</div>
 			</section>
@@ -88,25 +105,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				<h2>研究テーマ・関心領域</h2>
 				<div class="section-content">
 					<p>
-						大規模な生成モデルの活用を軸に、以下の領域を横断的に研究しています。
+						情報検索、画像処理、機械学習、自然言語処理、組み合わせ探索
 					</p>
-					<ul>
-						<li><strong>情報検索:</strong> 大規模なLoRAモデル群からのベクトル検索</li>
-						<li><strong>画像処理:</strong> Stable Diffusion等の画像生成パイプラインの最適化</li>
-						<li><strong>機械学習:</strong> CLIP等のマルチモーダルモデルを用いた特徴抽出</li>
-						<li><strong>組み合わせ探索:</strong> 複数のLoRAを統合（Merge）する際の最適解の導出</li>
-					</ul>
-				</div>
-			</section>
-
-			<section>
-				<h2>技術スタック / 興味</h2>
-				<div class="section-content">
-					<ul>
-						<li><strong>Languages/Frameworks:</strong> Python, PyTorch, Transformers, Diffusers</li>
-						<li><strong>Tools:</strong> VS Code, Linux (Ubuntu), Git, Weights & Biases</li>
-						<li><strong>Hardware:</strong> NVIDIA GeForce RTX 4060 Ti (16GB VRAM) 環境での開発</li>
-					</ul>
 				</div>
 			</section>
 
@@ -114,11 +114,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				<h2>趣味</h2>
 				<div class="section-content">
 					<ul>
-						<li><strong>ランニング:</strong> 研究の合間にリフレッシュとして走っています。</li>
-						<li><strong>ゲーム:</strong> ジャンルを問わずプレイしますが、最近はゲーム開発（Pygame）にも興味があります。</li>
-						<li><strong>スポーツ全般:</strong> 観るのも動くのも好きで、アクティブに過ごすことを心がけています。</li>
+						<li>ランニング</li>
+						<li>ゲーム</li>
+						<li>スポーツ全般</li>
 					</ul>
 				</div>
+			</section>
+
+			<section class="contact-box">
+				<h3>Contact</h3>
+				<p>お問い合わせやご連絡は下記メールアドレスまでお願いいたします。</p>
+				<a href="mailto:daichi.sugita323@gmail.com" class="email-link">
+					daichi.sugita323@gmail.com
+				</a>
 			</section>
 		</main>
 		<Footer />
