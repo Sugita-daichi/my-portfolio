@@ -1,18 +1,17 @@
 /* 1. 変数の定義（ライト/ダークを完全に分離） */
 :root {
-	--bg-color: #ffffff;
+	--accent: #2337ff;
+	--bg-color: #ffffff; /* ライトモードの背景 */
 	--text-color: #2c3e50;
 	--heading-color: #0f1219;
-	--accent: #2337ff;
-	--box-bg: #f8f9fa; /* 所属セクション等の背景 */
 }
 
+/* htmlタグに .dark クラスがついた時だけ変数を上書きする */
 html.dark {
-	--bg-color: #121212;
+	--bg-color: #121212; /* ダークモードの背景 */
 	--text-color: #e0e0e0;
 	--heading-color: #ffffff;
 	--accent: #64ffda;
-	--box-bg: #1e1e1e;
 }
 
 /* 2. 背景のリセット（ここが最重要） */
@@ -20,10 +19,10 @@ html, body {
 	margin: 0;
 	padding: 0;
 	/* !important を使い、テンプレートのグラデーションを強制消去します */
-	background-color: var(--bg-color) !important;
-	background-image: none !important;
+	background-color: var(--bg-color) !important; /* 変数を強制適用 */
+	background-image: none !important; /* テンプレートのグラデーションを消去 */
 	color: var(--text-color) !important;
-	transition: background-color 0.3s ease, color 0.3s ease;
+	transition: background-color 0.3s ease;
 }
 
 /* 3. レイアウトと文字の設定 */
