@@ -1,69 +1,32 @@
-/* 1. 変数の定義（ここを修正） */
+/* 1. 変数の定義（ライト/ダークを完全に分離） */
 :root {
-	/* ライトモード（デフォルト） */
 	--bg-color: #ffffff;
 	--text-color: #2c3e50;
 	--heading-color: #0f1219;
 	--accent: #2337ff;
-	--code-bg: #e5e9f0;
+	--box-bg: #f8f9fa; /* 所属セクション等の背景 */
 }
 
-/* クラス "dark" が付いている時だけ変数を上書き */
 html.dark {
 	--bg-color: #121212;
 	--text-color: #e0e0e0;
 	--heading-color: #ffffff;
 	--accent: #64ffda;
-	--code-bg: #2d2d2d;
+	--box-bg: #1e1e1e;
 }
 
-/* 2. スタイルの適用（!importantを使いすぎず、背景を単一化） */
+/* 2. 背景のリセット（ここが最重要） */
 html, body {
 	margin: 0;
 	padding: 0;
-	/* グラデーションを完全に廃止し、変数のみを参照させる */
-	background: var(--bg-color) !important;
-}
-
-body {
-	font-family: sans-serif;
-	text-align: left;
-	color: var(--text-color) !important; /* 文字色も変数に強制 */
-	font-size: 20px;
-	line-height: 1.7;
+	/* !important を使い、テンプレートのグラデーションを強制消去します */
+	background-color: var(--bg-color) !important;
+	background-image: none !important;
+	color: var(--text-color) !important;
 	transition: background-color 0.3s ease, color 0.3s ease;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
 }
 
-/* 3. 各要素の色の適用 */
-h1, h2, h3, h4, h5, h6 {
-	color: var(--heading-color) !important;
-	line-height: 1.2;
-	margin: 0 0 0.5rem 0;
-}
-
-h1 { font-size: 3.052em; }
-h2 { font-size: 2.441em; }
-h3 { font-size: 1.953em; }
-
-a { color: var(--accent); transition: color 0.2s ease; }
-a:hover { opacity: 0.8; }
-
-strong, b { 
-	font-weight: 700; 
-	color: var(--heading-color) !important; 
-}
-
-/* 所属のボックスなどの背景も連動させる */
-.lab-info {
-	background: var(--code-bg) !important;
-	padding: 1.2rem;
-	border-radius: 8px;
-	color: var(--text-color);
-}
-
-/* --- 残りの設定（mainやhrなど） --- */
+/* 3. レイアウトと文字の設定 */
 main {
 	width: 720px;
 	max-width: calc(100% - 2em);
@@ -71,7 +34,29 @@ main {
 	padding: 3em 1em;
 }
 
-hr {
-	border: none;
-	border-top: 1px solid var(--code-bg);
+h1, h2, h3, h4, h5, h6 {
+	color: var(--heading-color) !important;
+	margin: 0 0 0.5rem 0;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.8rem; border-left: 4px solid var(--accent); padding-left: 1rem; margin-top: 2rem; }
+
+p, li { line-height: 1.8; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 4. コンテンツ内のボックス（所属など） */
+.lab-info {
+	background-color: var(--box-bg) !important;
+	padding: 1.5rem;
+	border-radius: 8px;
+	margin: 1rem 0;
+}
+
+/* メールリンク等の強調 */
+.email-link {
+	font-weight: bold;
+	color: var(--accent);
 }
