@@ -9,30 +9,28 @@
 	
 	/* モード共通の背景・文字設定（ライトモードがデフォルト） */
 	--bg-color: #ffffff;
-	--bg-gradient: rgba(229, 233, 240, 50%), #fff;
-	--text-color: rgb(var(--gray-dark));
-	--heading-color: rgb(var(--black));
-	--code-bg: rgb(var(--gray-light));
+	--text-color: #2c3e50;
+	--heading-color: #0f1219;
+	--code-bg: #e5e9f0;
 }
 
-/* ダークモード設定 (.darkクラスがhtmlについた時) */
-:root.dark {
-	--accent: #64ffda;
-	--accent-dark: #121212;
+/* ダークモード設定 (htmlタグにdarkクラスがついた時) */
+html.dark {
 	--bg-color: #121212;
-	--bg-gradient: #121212, #1a1a1a;
 	--text-color: #e0e0e0;
 	--heading-color: #ffffff;
+	--accent: #64ffda;
 	--code-bg: #2d2d2d;
-	--gray-light: 45, 45, 45; /* 線の色なども暗くする */
+	--gray-light: 45, 45, 45;
 }
 
 body {
-	font-family: sans-serif; /* Atkinsonフォントのエラー回避のため標準を一時指定 */
+	font-family: sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: var(--bg-color); /* 単色指定、または linear-gradient(var(--bg-gradient)) */
+	/* グラデーションを背景色変数に変更 */
+	background-color: var(--bg-color);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: var(--text-color);
@@ -40,6 +38,7 @@ body {
 	line-height: 1.7;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 
 main {
 	width: 720px;
