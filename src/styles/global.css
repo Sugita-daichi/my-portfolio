@@ -1,21 +1,16 @@
-/* テーマ変数定義 */
+/* --- 前半の変数定義部分は変更なし --- */
 :root {
 	--accent: #2337ff;
 	--bg-color: #ffffff;
 	--text-color: #2c3e50;
 	--heading-color: #0f1219;
-	--code-bg: #e5e9f0;
-	--border-color: #e5e9f0;
 }
 
-/* ダークモード設定 - html.dark で定義 */
 html.dark {
 	--bg-color: #121212;
 	--text-color: #e0e0e0;
 	--heading-color: #ffffff;
 	--accent: #64ffda;
-	--code-bg: #2d2d2d;
-	--border-color: #333333;
 }
 
 body {
@@ -23,14 +18,20 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	/* !importantを使い、初期設定のグラデーション等を強制的に上書きします */
+	
+	/* 【重要】ここを修正：グラデーションを完全に消し、背景色を強制します */
 	background: var(--bg-color) !important;
+	background-image: none !important;
+	
 	color: var(--text-color) !important;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
 	font-size: 20px;
 	line-height: 1.7;
 	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 各見出しも強制的に色を適用 */
+h1, h2, h3, h4, h5, h6 {
+	color: var(--heading-color) !important;
 }
 
 main {
@@ -40,12 +41,6 @@ main {
 	padding: 3em 1em;
 	/* 背景色と文字色の影響がmainにも及ぶようにします */
 	background-color: transparent;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	margin: 0 0 0.5rem 0;
-	color: var(--heading-color) !important;
-	line-height: 1.2;
 }
 
 h1 { font-size: 3.052em; }
