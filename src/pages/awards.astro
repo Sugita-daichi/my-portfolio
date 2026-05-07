@@ -8,26 +8,74 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <!doctype html>
 <html lang="ja">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={`Awards | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 3em 1em;
+			}
+			h1 {
+				color: var(--heading-color);
+				border-bottom: 1px solid var(--box-border);
+				padding-bottom: 1rem;
+				margin-bottom: 2rem;
+			}
+			.award-item {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+				margin-bottom: 2.5rem;
+				padding: 1.5rem;
+				background: var(--box-bg);
+				border-radius: 12px;
+				border: 1px solid var(--box-border);
+			}
+			.award-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+			}
+			.award-title {
+				color: var(--accent);
+				font-size: 1.25rem;
+				font-weight: bold;
+				margin: 0;
+			}
+			.award-date {
+				font-size: 0.9rem;
+				opacity: 0.8;
+			}
+			.award-comment {
+				margin-top: 0.5rem;
+				font-size: 0.95rem;
+				line-height: 1.6;
+				border-top: 1px dashed var(--box-border);
+				padding-top: 0.8rem;
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>👨‍🔬 Profile</h1>
-			<p>
-				静岡大学大学院 総合科学技術研究科 修士1年の杉田大馳です。
-			</p>
-			<p>
-				主な研究分野は<strong>画像生成モデル（Stable Diffusion）におけるLoRAの検索と統合</strong>です。
-				生成AIの柔軟性を高め、ユーザーが望む画像をより正確に生成できる手法を開発しています。
-			</p>
-			
-			<h2>興味のある技術</h2>
-			<ul>
-				<li>Deep Learning / PyTorch</li>
-				<li>Computer Vision (Stable Diffusion, LoRA)</li>
-				<li>Image Retrieval / Vector Databases</li>
-			</ul>
+			<h1>Awards</h1>
+
+			<div class="award-item">
+				<div class="award-header">
+					<p class="award-title">🏆 東海関西データベースワークショップ2025 優秀賞</p>
+					<span class="award-date">2025年</span>
+				</div>
+				<div class="award-comment">
+					<p>
+						画像検索とLoRA統合に関する初期段階の研究が高く評価され、優秀賞を頂くことができました。
+						この受賞が、その後のDEIMやWebDBでの発表に向けた大きな自信に繋がりました。
+					</p>
+				</div>
+			</div>
+
 		</main>
 		<Footer />
 	</body>

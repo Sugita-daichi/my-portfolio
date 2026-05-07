@@ -8,26 +8,85 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <!doctype html>
 <html lang="ja">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={`Researches | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 3em 1em;
+			}
+			h1 {
+				color: var(--heading-color);
+				border-bottom: 1px solid var(--box-border);
+				padding-bottom: 1rem;
+				margin-bottom: 2rem;
+			}
+			.research-item {
+				margin-bottom: 3rem;
+			}
+			.research-item h3 {
+				color: var(--accent);
+				font-size: 1.3rem;
+				margin-bottom: 0.5rem;
+				line-height: 1.4;
+			}
+			.meta-info {
+				font-size: 0.95rem;
+				color: var(--text-color);
+				opacity: 0.9;
+				margin-bottom: 1rem;
+			}
+			.description-box {
+				background: var(--box-bg);
+				padding: 1rem 1.5rem;
+				border-radius: 8px;
+				border-left: 4px solid var(--accent);
+				font-size: 0.95rem;
+				line-height: 1.6;
+			}
+			.description-box strong {
+				display: block;
+				margin-bottom: 0.3rem;
+				color: var(--accent);
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>👨‍🔬 Profile</h1>
-			<p>
-				静岡大学大学院 総合科学技術研究科 修士1年の杉田大馳です。
-			</p>
-			<p>
-				主な研究分野は<strong>画像生成モデル（Stable Diffusion）におけるLoRAの検索と統合</strong>です。
-				生成AIの柔軟性を高め、ユーザーが望む画像をより正確に生成できる手法を開発しています。
-			</p>
-			
-			<h2>興味のある技術</h2>
-			<ul>
-				<li>Deep Learning / PyTorch</li>
-				<li>Computer Vision (Stable Diffusion, LoRA)</li>
-				<li>Image Retrieval / Vector Databases</li>
-			</ul>
+			<h1>Researches</h1>
+
+			<section class="research-item">
+				<h3>目標画像と使用中のLoRAを入力とするマージすべきLoRAアダプタの検索</h3>
+				<div class="meta-info">
+					<p>著者：杉田 大知, ファム フー ロン, 藤田 澄男, 大島 裕明, 荘司 慶行</p>
+					<p>発表会議：WebDB夏のワークショップ2025</p>
+				</div>
+				<div class="description-box">
+					<strong>解説・感想</strong>
+					<p>
+						画像生成AIにおいて、既存のLoRAと相性の良い新しいLoRAを自動で推薦する手法を提案しました。
+						初めての学外発表で緊張しましたが、多くの方から有益なフィードバックを頂くことができました。
+					</p>
+				</div>
+			</section>
+
+			<section class="research-item">
+				<h3>モデルのトークンエンベディングによる目標画像を生成するためにマージすべきLoRAの検索</h3>
+				<div class="meta-info">
+					<p>著者：杉田 大知, ファム フー ロン, 藤田 澄男, 大島 裕明, 荘司 慶行</p>
+					<p>発表会議：第18回データ工学と情報マネジメントに関するフォーラム（DEIM2026）</p>
+				</div>
+				<div class="description-box">
+					<strong>解説・感想</strong>
+					<p>
+						トークンエンベディング空間での解析を用いることで、より高精度なLoRA検索を実現しました。
+						LINEヤフー様との共同研究の成果が含まれており、実用性を意識した議論ができました。
+					</p>
+				</div>
+			</section>
+
 		</main>
 		<Footer />
 	</body>
