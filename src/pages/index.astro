@@ -17,38 +17,47 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				padding: 3em 1em;
 			}
 			.profile-header {
-				border-bottom: 1px solid #333;
+				border-bottom: 1px solid var(--box-border);
 				margin-bottom: 2rem;
 				padding-bottom: 1rem;
 			}
-			h1 { color: #fff; }
+			h1 {
+				color: var(--heading-color);
+			}
 			h2 {
-				color: var(--accent-light);
-				border-left: 4px solid var(--accent-light);
+				/* シアンのアクセントカラーを復活 */
+				color: var(--accent);
+				border-left: 4px solid var(--accent);
 				padding-left: 15px;
 				margin-top: 3rem;
 				font-size: 1.4rem;
 			}
-			h3 { color: #bbb; font-size: 1.1rem; margin-top: 1.5rem; }
+			h3 {
+				color: var(--heading-color);
+				font-size: 1.1rem;
+				margin-top: 1.5rem;
+			}
+			/* 文字色は global.css の変数が自動で適用されるため、ここでは指定しません */
 			p, li {
 				line-height: 1.8;
-				color: #ccc;
 			}
 			.lab-info {
-				background: #1e1e1e;
+				/* 主張を抑えたデザインに変更 */
+				background: var(--box-bg);
 				padding: 1.2rem;
 				border-radius: 8px;
-				border-left: 4px solid #444;
+				border-left: 4px solid var(--accent);
+				margin: 1rem 0;
 			}
 			.contact-box {
 				margin-top: 3rem;
 				padding: 2rem;
-				border: 1px solid #333;
+				border: 1px solid var(--box-border);
 				border-radius: 12px;
 				text-align: center;
 			}
 			.email-link {
-				color: var(--accent-light);
+				color: var(--accent);
 				text-decoration: none;
 				font-weight: bold;
 				font-size: 1.1rem;

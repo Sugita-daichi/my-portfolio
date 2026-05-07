@@ -1,36 +1,47 @@
-/* 変数定義：htmlタグの状態に基づいて値を決める */
+/* 変数定義：モードに応じて色が入れ替わるようにします */
 :root {
+	/* ライトモード（デフォルト） */
 	--bg-color: #ffffff;
-	--text-color: #2c3e50;
+	--text-color: #1a1a1a;     /* 読みやすい黒 */
 	--heading-color: #0f1219;
-	--accent: #2337ff;
+	--accent: #00a3af;         /* 鮮やかなシアン */
+	--box-bg: #f0f4f8;         /* 控えめな薄いグレー */
+	--box-border: #d1d9e0;
 }
 
-/* htmlタグに .dark クラスがついている時だけ変数を上書き */
 html.dark {
+	/* ダークモード */
 	--bg-color: #121212;
-	--text-color: #e0e0e0;
+	--text-color: #e0e0e0;     /* 読みやすい白 */
 	--heading-color: #ffffff;
-	--accent: #64ffda;
+	--accent: #64ffda;         /* 蛍光感のあるシアン */
+	--box-bg: #1e1e1e;         /* 暗いグレー */
+	--box-border: #333333;
 }
 
-/* 背景のリセット：!important を使い、テンプレートの初期設定を上書きする */
+/* 全体への適用：!importantを使って確実に反映させます */
 html, body {
 	margin: 0;
 	padding: 0;
-	/* backgroundプロパティ全体を上書きし、グラデーションを消去します */
 	background: var(--bg-color) !important;
 	background-image: none !important;
 	color: var(--text-color) !important;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 見出しも変数に従うよう強制 */
+body {
+	font-family: sans-serif;
+	font-size: 20px;
+	line-height: 1.7;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	color: var(--heading-color) !important;
 }
 
-/* mainの中身も背景を透過させる */
 main {
-	background: transparent !important;
+	width: 720px;
+	max-width: calc(100% - 2em);
+	margin: auto;
+	padding: 3em 1em;
 }
