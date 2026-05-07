@@ -8,26 +8,122 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <!doctype html>
 <html lang="ja">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={`Projects | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<style>
+			main {
+				width: calc(100% - 2em);
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 3em 1em;
+			}
+			h1 {
+				color: var(--heading-color);
+				border-bottom: 2px solid var(--accent);
+				padding-bottom: 0.5rem;
+				margin-bottom: 3rem;
+			}
+			.group-title {
+				font-size: 1.5rem;
+				color: var(--heading-color);
+				margin: 3rem 0 1.5rem 0;
+				display: flex;
+				align-items: center;
+				gap: 0.8rem;
+			}
+			.group-title::before {
+				content: "";
+				display: inline-block;
+				width: 8px;
+				height: 24px;
+				background: var(--accent);
+				border-radius: 2px;
+			}
+			.project-card {
+				background: var(--box-bg);
+				border: 1px solid var(--box-border);
+				border-radius: 12px;
+				padding: 1.5rem;
+				margin-bottom: 1.5rem;
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+			.project-card:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+			}
+			.project-card h3 {
+				color: var(--accent);
+				font-size: 1.2rem;
+				margin: 0 0 0.8rem 0;
+			}
+			.project-description {
+				font-size: 0.95rem;
+				line-height: 1.6;
+				margin-bottom: 1.2rem;
+			}
+			.link-container {
+				display: flex;
+				gap: 1rem;
+				flex-wrap: wrap;
+			}
+			.project-link {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.5rem;
+				padding: 0.5rem 1rem;
+				background: var(--bg-color);
+				border: 1px solid var(--accent);
+				color: var(--accent);
+				border-radius: 6px;
+				text-decoration: none;
+				font-size: 0.9rem;
+				font-weight: bold;
+				transition: all 0.2s ease;
+			}
+			.project-link:hover {
+				background: var(--accent);
+				color: var(--bg-color);
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>👨‍🔬 Profile</h1>
-			<p>
-				静岡大学大学院 総合科学技術研究科 修士1年の杉田大馳です。
-			</p>
-			<p>
-				主な研究分野は<strong>画像生成モデル（Stable Diffusion）におけるLoRAの検索と統合</strong>です。
-				生成AIの柔軟性を高め、ユーザーが望む画像をより正確に生成できる手法を開発しています。
-			</p>
+			<h1>Projects</h1>
+
+			<h2 class="group-title">Datasets</h2>
 			
-			<h2>興味のある技術</h2>
-			<ul>
-				<li>Deep Learning / PyTorch</li>
-				<li>Computer Vision (Stable Diffusion, LoRA)</li>
-				<li>Image Retrieval / Vector Databases</li>
-			</ul>
+			<div class="project-card">
+				<h3>LoRA Retrieval Subjective Evaluation Dataset</h3>
+				<div class="project-description">
+					<p>
+						国際会議 ICMR 2026 採択論文「Which LoRA Should Be Merged Next?」の評価に使用したデータセットです。
+						計9名の被験者による90件の検索クエリに対する主観評価データを含んでいます。
+					</p>
+				</div>
+				<div class="link-container">
+					<a href="https://huggingface.co/Sugita-daichi" target="_blank" class="project-link">
+						<span>🤗 Hugging Face</span>
+					</a>
+				</div>
+			</div>
+
+			<h2 class="group-title">Software & Tools</h2>
+
+			<div class="project-card">
+				<h3>LoRA-Search-Retrieval-Script</h3>
+				<div class="project-description">
+					<p>
+						画像を入力として、最適な追加学習モデル（LoRA）を検索・統合するためのPythonスクリプト群です。
+						PyTorchおよびDiffusersライブラリをベースに構築されています。
+					</p>
+				</div>
+				<div class="link-container">
+					<a href="https://github.com/Sugita-daichi" target="_blank" class="project-link">
+						<span>GitHub Repository</span>
+					</a>
+				</div>
+			</div>
+
 		</main>
 		<Footer />
 	</body>
