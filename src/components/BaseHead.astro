@@ -35,13 +35,12 @@ const { title, description, image = FallbackImage } = Astro.props;
 		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 	})();
 
-	// themeの値に合わせて、クラスを付けるか外すかをハッキリさせる
+	// 判定結果に基づいて、クラスの追加・削除を明確に実行する
 	if (theme === 'dark') {
 		document.documentElement.classList.add('dark');
 	} else {
 		document.documentElement.classList.remove('dark');
 	}
-	
 	window.localStorage.setItem('theme', theme);
 </script>
 

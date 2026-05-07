@@ -1,61 +1,36 @@
-/* 1. 変数の定義（ライト/ダークを完全に分離） */
+/* 変数定義：htmlタグの状態に基づいて値を決める */
 :root {
-	--accent: #2337ff;
-	--bg-color: #ffffff; /* ライトモードの背景 */
+	--bg-color: #ffffff;
 	--text-color: #2c3e50;
 	--heading-color: #0f1219;
+	--accent: #2337ff;
 }
 
-/* htmlタグに .dark クラスがついた時だけ変数を上書きする */
+/* htmlタグに .dark クラスがついている時だけ変数を上書き */
 html.dark {
-	--bg-color: #121212; /* ダークモードの背景 */
+	--bg-color: #121212;
 	--text-color: #e0e0e0;
 	--heading-color: #ffffff;
 	--accent: #64ffda;
 }
 
-/* 2. 背景のリセット（ここが最重要） */
+/* 背景のリセット：!important を使い、テンプレートの初期設定を上書きする */
 html, body {
 	margin: 0;
 	padding: 0;
-	/* !important を使い、テンプレートのグラデーションを強制消去します */
-	background-color: var(--bg-color) !important; /* 変数を強制適用 */
-	background-image: none !important; /* テンプレートのグラデーションを消去 */
+	/* backgroundプロパティ全体を上書きし、グラデーションを消去します */
+	background: var(--bg-color) !important;
+	background-image: none !important;
 	color: var(--text-color) !important;
-	transition: background-color 0.3s ease;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* 3. レイアウトと文字の設定 */
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
-
+/* 見出しも変数に従うよう強制 */
 h1, h2, h3, h4, h5, h6 {
 	color: var(--heading-color) !important;
-	margin: 0 0 0.5rem 0;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 1.8rem; border-left: 4px solid var(--accent); padding-left: 1rem; margin-top: 2rem; }
-
-p, li { line-height: 1.8; }
-
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* 4. コンテンツ内のボックス（所属など） */
-.lab-info {
-	background-color: var(--box-bg) !important;
-	padding: 1.5rem;
-	border-radius: 8px;
-	margin: 1rem 0;
-}
-
-/* メールリンク等の強調 */
-.email-link {
-	font-weight: bold;
-	color: var(--accent);
+/* mainの中身も背景を透過させる */
+main {
+	background: transparent !important;
 }
