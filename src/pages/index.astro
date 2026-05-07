@@ -25,7 +25,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				color: var(--heading-color);
 			}
 			h2 {
-				/* シアンのアクセントカラーを復活 */
 				color: var(--accent);
 				border-left: 4px solid var(--accent);
 				padding-left: 15px;
@@ -37,12 +36,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				font-size: 1.1rem;
 				margin-top: 1.5rem;
 			}
-			/* 文字色は global.css の変数が自動で適用されるため、ここでは指定しません */
 			p, li {
 				line-height: 1.8;
 			}
 			.lab-info {
-				/* 主張を抑えたデザインに変更 */
 				background: var(--box-bg);
 				padding: 1.2rem;
 				border-radius: 8px;
@@ -50,11 +47,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 				margin: 1rem 0;
 			}
 			.contact-box {
-				margin-top: 3rem;
-				padding: 2rem;
+				margin-top: 2rem;
+				padding: 1rem 2rem;
 				border: 1px solid var(--box-border);
 				border-radius: 12px;
 				text-align: center;
+			}
+			.contact-box h3 {
+				margin-top: 0;         
+				margin-bottom: 0.5rem; 
 			}
 			.email-link {
 				color: var(--accent);
