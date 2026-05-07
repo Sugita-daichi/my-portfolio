@@ -18,37 +18,66 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			}
 			h1 {
 				color: var(--heading-color);
-				border-bottom: 1px solid var(--box-border);
-				padding-bottom: 1rem;
-				margin-bottom: 2rem;
-			}
-			.research-item {
+				border-bottom: 2px solid var(--accent);
+				padding-bottom: 0.5rem;
 				margin-bottom: 3rem;
 			}
-			.research-item h3 {
+			/* グループ見出し */
+			.group-title {
+				font-size: 1.5rem;
+				color: var(--heading-color);
+				margin: 3rem 0 1.5rem 0;
+				display: flex;
+				align-items: center;
+				gap: 0.8rem;
+			}
+			.group-title::before {
+				content: "";
+				display: inline-block;
+				width: 8px;
+				height: 24px;
+				background: var(--accent);
+				border-radius: 2px;
+			}
+			/* 論文カード */
+			.research-card {
+				background: var(--box-bg);
+				border: 1px solid var(--box-border);
+				border-radius: 12px;
+				padding: 1.5rem;
+				margin-bottom: 1.5rem;
+				transition: transform 0.2s ease, box-shadow 0.2s ease;
+			}
+			.research-card:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+			}
+			.research-card h3 {
 				color: var(--accent);
-				font-size: 1.3rem;
-				margin-bottom: 0.5rem;
+				font-size: 1.2rem;
+				margin: 0 0 0.8rem 0;
 				line-height: 1.4;
 			}
 			.meta-info {
-				font-size: 0.95rem;
+				font-size: 0.9rem;
 				color: var(--text-color);
-				opacity: 0.9;
+				opacity: 0.8;
 				margin-bottom: 1rem;
+				line-height: 1.5;
 			}
-			.description-box {
-				background: var(--box-bg);
-				padding: 1rem 1.5rem;
-				border-radius: 8px;
-				border-left: 4px solid var(--accent);
+			.comment-section {
 				font-size: 0.95rem;
 				line-height: 1.6;
+				border-top: 1px solid var(--box-border);
+				padding-top: 1rem;
+				margin-top: 1rem;
 			}
-			.description-box strong {
+			.comment-label {
+				font-weight: bold;
+				color: var(--accent);
+				font-size: 0.85rem;
 				display: block;
 				margin-bottom: 0.3rem;
-				color: var(--accent);
 			}
 		</style>
 	</head>
@@ -57,35 +86,43 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<main>
 			<h1>Researches</h1>
 
-			<section class="research-item">
+			<h2 class="group-title">International Conference</h2>
+			<div class="research-card">
+				<h3>Which LoRA Should Be Merged Next? Retrieving an Additional LoRA from a Target Image</h3>
+				<div class="meta-info">
+					<p>Daichi Sugita, Huu-Long Pham, Makoto P. Kato, Hiroaki Ohshima, Sumio Fijita, Yoshiyuki Shoji</p>
+					<p>Proc. of The 16th ACM International Conference on Multimedia Retrieval (ICMR 2026), to appear, 2026.</p>
+				</div>
+				<div class="comment-section">
+					<span class="comment-label">Overview & Reflection</span>
+					<p>自身の研究成果が世界的に認められたことは、研究者として大きな自信に繋がりました。アムステルダムでの本会議に向けて、準備を進めています。</p>
+				</div>
+			</div>
+
+			<h2 class="group-title">Domestic Workshop</h2>
+			<div class="research-card">
+				<h3>モデルのトークンエンベディングによる目標画像を生成するためにマージすべきLoRAの検索</h3>
+				<div class="meta-info">
+					<p>著者：杉田 大知, ファム フー ロン, 藤田 澄男, 大島 裕明, 荘司 慶行</p>
+					<p>発表会議：第18回データ工学と情報マネジメントに関するフォーラム (DEIM 2026)</p>
+				</div>
+				<div class="comment-section">
+					<span class="comment-label">解説・感想</span>
+					<p>LINEヤフー様との共同研究の中で議論を深めた成果です。実社会の課題解決に向けたアプローチを意識しました。</p>
+				</div>
+			</div>
+
+			<div class="research-card">
 				<h3>目標画像と使用中のLoRAを入力とするマージすべきLoRAアダプタの検索</h3>
 				<div class="meta-info">
 					<p>著者：杉田 大知, ファム フー ロン, 藤田 澄男, 大島 裕明, 荘司 慶行</p>
 					<p>発表会議：WebDB夏のワークショップ2025</p>
 				</div>
-				<div class="description-box">
-					<strong>解説・感想</strong>
-					<p>
-						画像生成AIにおいて、既存のLoRAと相性の良い新しいLoRAを自動で推薦する手法を提案しました。
-						初めての学外発表で緊張しましたが、多くの方から有益なフィードバックを頂くことができました。
-					</p>
+				<div class="comment-section">
+					<span class="comment-label">解説・感想</span>
+					<p>画像生成AIにおけるLoRAの検索と統合という、現在の研究テーマの出発点となった発表です。</p>
 				</div>
-			</section>
-
-			<section class="research-item">
-				<h3>モデルのトークンエンベディングによる目標画像を生成するためにマージすべきLoRAの検索</h3>
-				<div class="meta-info">
-					<p>著者：杉田 大知, ファム フー ロン, 藤田 澄男, 大島 裕明, 荘司 慶行</p>
-					<p>発表会議：第18回データ工学と情報マネジメントに関するフォーラム（DEIM2026）</p>
-				</div>
-				<div class="description-box">
-					<strong>解説・感想</strong>
-					<p>
-						トークンエンベディング空間での解析を用いることで、より高精度なLoRA検索を実現しました。
-						LINEヤフー様との共同研究の成果が含まれており、実用性を意識した議論ができました。
-					</p>
-				</div>
-			</section>
+			</div>
 
 		</main>
 		<Footer />

@@ -18,28 +18,52 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			}
 			h1 {
 				color: var(--heading-color);
-				border-bottom: 1px solid var(--box-border);
-				padding-bottom: 1rem;
-				margin-bottom: 2rem;
+				border-bottom: 2px solid var(--accent);
+				padding-bottom: 0.5rem;
+				margin-bottom: 3rem;
 			}
-			.award-item {
+			.group-title {
+				font-size: 1.5rem;
+				color: var(--heading-color);
+				margin: 3rem 0 1.5rem 0;
 				display: flex;
-				flex-direction: column;
-				gap: 0.5rem;
-				margin-bottom: 2.5rem;
-				padding: 1.5rem;
+				align-items: center;
+				gap: 0.8rem;
+			}
+			.group-title::before {
+				content: "";
+				display: inline-block;
+				width: 8px;
+				height: 24px;
+				background: var(--accent);
+				border-radius: 2px;
+			}
+			.award-card {
 				background: var(--box-bg);
-				border-radius: 12px;
 				border: 1px solid var(--box-border);
+				border-radius: 12px;
+				padding: 1.5rem;
+				margin-bottom: 1.5rem;
+				position: relative;
+				overflow: hidden;
+			}
+			/* 受賞カードの左側にアクセントの帯を追加 */
+			.award-card::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 6px;
+				height: 100%;
+				background: var(--accent);
 			}
 			.award-header {
 				display: flex;
 				justify-content: space-between;
-				align-items: flex-start;
-				flex-wrap: wrap;
-				gap: 0.5rem;
+				align-items: baseline;
+				margin-bottom: 1rem;
 			}
-			.award-title {
+			.award-name {
 				color: var(--accent);
 				font-size: 1.25rem;
 				font-weight: bold;
@@ -47,14 +71,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 			}
 			.award-date {
 				font-size: 0.9rem;
-				opacity: 0.8;
+				opacity: 0.7;
+				font-weight: bold;
 			}
 			.award-comment {
-				margin-top: 0.5rem;
 				font-size: 0.95rem;
 				line-height: 1.6;
-				border-top: 1px dashed var(--box-border);
 				padding-top: 0.8rem;
+				border-top: 1px dashed var(--box-border);
 			}
 		</style>
 	</head>
@@ -63,15 +87,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<main>
 			<h1>Awards</h1>
 
-			<div class="award-item">
+			<h2 class="group-title">Research Awards</h2>
+			<div class="award-card">
 				<div class="award-header">
-					<p class="award-title">🏆 東海関西データベースワークショップ2025 優秀賞</p>
-					<span class="award-date">2025年</span>
+					<p class="award-name">東海関西データベースワークショップ2025 優秀賞</p>
+					<span class="award-date">2025</span>
 				</div>
 				<div class="award-comment">
 					<p>
-						画像検索とLoRA統合に関する初期段階の研究が高く評価され、優秀賞を頂くことができました。
-						この受賞が、その後のDEIMやWebDBでの発表に向けた大きな自信に繋がりました。
+						画像検索とLoRA統合に関する初期段階の研究が高く評価されました。この受賞が、その後の国際会議採択に向けた大きな励みとなりました。
 					</p>
 				</div>
 			</div>
