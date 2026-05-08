@@ -1,25 +1,21 @@
-/* 変数定義：モードに応じて色が入れ替わるようにします */
 :root {
-	/* ライトモード（デフォルト） */
 	--bg-color: #ffffff;
-	--text-color: #1a1a1a;     /* 読みやすい黒 */
+	--text-color: #1a1a1a;     
 	--heading-color: #0f1219;
-	--accent: #00a3af;         /* 鮮やかなシアン */
-	--box-bg: #f0f4f8;         /* 控えめな薄いグレー */
+	--accent: #00a3af;         
+	--box-bg: #f0f4f8;         
 	--box-border: #d1d9e0;
 }
 
 html.dark {
-	/* ダークモード */
 	--bg-color: #121212;
-	--text-color: #e0e0e0;     /* 読みやすい白 */
+	--text-color: #e0e0e0;    
 	--heading-color: #ffffff;
-	--accent: #64ffda;         /* 蛍光感のあるシアン */
-	--box-bg: #1e1e1e;         /* 暗いグレー */
+	--accent: #64ffda;        
+	--box-bg: #1e1e1e;        
 	--box-border: #333333;
 }
 
-/* 全体への適用：!importantを使って確実に反映させます */
 html, body {
 	margin: 0;
 	padding: 0;
