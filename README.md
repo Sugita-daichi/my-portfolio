@@ -3,11 +3,11 @@
 静岡大学大学院 修士1年生 杉田大知のポートフォリオサイトです。
 自身の研究成果、受賞歴、開発プロジェクト、およびスキルセットを公開しています。
 
-[🚀 サイトを見る](https://sugita-daichi.github.io/)
+[本サイト](https://sugita-daichi.github.io/)
 
 ---
 
-## 👨‍💻 自己紹介
+## 自己紹介
 
 - **所属**: 静岡大学大学院 総合科学技術研究科 情報学専攻 莊司研究室（修士1年）
 - **研究テーマ**: 画像生成AIにおける追加学習モデル（LoRA）の検索および統合手法
@@ -15,7 +15,7 @@
 
 現在、**LINEヤフー株式会社様との共同研究**に従事しており、実社会の課題解決に向けた大規模モデルの活用技術を開発しています。
 
-## 📚 主な研究実績
+## 主な研究実績
 
 ### 国際会議 (Accepted)
 - **Which LoRA Should Be Merged Next? Retrieving an Additional LoRA from a Target Image**
@@ -35,7 +35,7 @@
 - **Deployment**: GitHub Pages
 - **Development**: Python (Machine Learning / Deep Learning), PyTorch, Linux (Ubuntu)
 
-## 📁 プロジェクト構成
+## プロジェクト構成
 
 ```text
 ├── public/          # 静的ファイル（faviconなど）
