@@ -1,67 +1,47 @@
-<<<<<<< HEAD
-# Astro Starter Kit: Blog
+# Daichi Sugita Portfolio
 
-```sh
-npm create astro@latest -- --template blog
-```
+静岡大学大学院 修士1年生 杉田大知のポートフォリオサイトです。
+自身の研究成果、受賞歴、開発プロジェクト、およびスキルセットを公開しています。
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[🚀 サイトを見る](https://sugita-daichi.github.io/)
 
-Features:
+---
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## 👨‍💻 自己紹介
 
-## 🚀 Project Structure
+- **所属**: 静岡大学大学院 総合科学技術研究科 情報学専攻 莊司研究室（修士1年）
+- **研究テーマ**: 画像生成AIにおける追加学習モデル（LoRA）の検索および統合手法
+- **関心領域**: 情報検索, 画像処理, 機械学習, 自然言語処理
 
-Inside of your Astro project, you'll see the following folders and files:
+現在、**LINEヤフー株式会社様との共同研究**に従事しており、実社会の課題解決に向けた大規模モデルの活用技術を開発しています。
+
+## 📚 主な研究実績
+
+### 国際会議 (Accepted)
+- **Which LoRA Should Be Merged Next? Retrieving an Additional LoRA from a Target Image**
+  - *ICMR 2026* (The 16th ACM International Conference on Multimedia Retrieval) にて採択。
+
+### 国内発表
+- **DEIM 2026**: モデルのトークンエンベディングによる目標画像を生成するためにマージすべきLoRAの検索
+- **WebDB 2025**: 目標画像と使用中のLoRAを入力とするマージすべきLoRAアダプタの検索
+
+### 受賞
+- **東海関西データベースワークショップ2025**: 優秀賞
+
+## 🛠 技術スタック
+
+- **Framework**: Astro (Static Site Generator)
+- **Styling**: CSS (Custom Properties / Dark Mode Support)
+- **Deployment**: GitHub Pages
+- **Development**: Python (Machine Learning / Deep Learning), PyTorch, Linux (Ubuntu)
+
+## 📁 プロジェクト構成
 
 ```text
-├── public/
+├── public/          # 静的ファイル（faviconなど）
 ├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
-=======
-# my-portfolio
->>>>>>> 753cba162383735db190b4a79d9ea082fc9fb2c6
+│   ├── assets/      # プロフィール画像、プロジェクト画像
+│   ├── components/  # 共通パーツ（Header, Footer, ThemeIconなど）
+│   ├── pages/       # 各ページ（Profile, Researches, Awards, Projects）
+│   └── styles/      # グローバルCSS
+└── astro.config.mjs # Astro設定ファイル
