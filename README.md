@@ -3,7 +3,7 @@
 静岡大学大学院 修士1年生 杉田大知のポートフォリオサイトです。
 自身の研究成果、受賞歴、開発プロジェクト、およびスキルセットを公開しています。
 
-[本サイト](https://sugita-daichi.github.io/)
+[本サイト](https://sugita-daichi.github.io/my-portfolio/)
 
 ---
 
